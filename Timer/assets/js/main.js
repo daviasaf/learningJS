@@ -20,6 +20,7 @@ function iniciarRelogio(){
 }
 
 iniciar.addEventListener("click",()=>{
+    clearInterval(timer)
     iniciarRelogio()
     relogio.style.color = "green"
 })
