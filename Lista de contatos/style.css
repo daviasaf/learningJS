@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+}
+:root{
+    --laranja:#fd8d32;
+    --laranjaEscuro:#d7621a;
+    --marrom:#79451d;
+    --marromEscuro:#413726;
+    --preto:#8e8e8e;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--marromEscuro);
+    color: var(--preto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#listadecontatos{
+    height: 40%;
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+input, button{
+    border: none;
+    background-color: var(--marrom);
+    padding: 3px;
+    width: 100%;
+    margin: 10px 0;
+}
+input:hover, button:hover{
+    background-color: var(--laranjaEscuro);
+    border: 1px solid var(--marrom);
+}
+th{
+    padding: 5px 15px;
+}
