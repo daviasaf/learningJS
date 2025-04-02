@@ -1,5 +1,7 @@
 function criaMultiplicador(multiplicador){
+    //2
     return function (n){
+        //2
         return n * multiplicador
     };
 };
