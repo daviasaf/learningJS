@@ -9,7 +9,7 @@ class validaCPF {
     });
   }
   valida() {
-    //Caso string vazia, retorne
+    //Se diferente de cpfEnviado (String vazia), retorne
     if (!this.cpfEnviado) return false;
     //Se o que for enviado for diferente de string, retorne
     if (typeof this.cpfEnviado !== "string") return false;
@@ -25,14 +25,19 @@ class validaCPF {
     return sequencia === this.cpfEnviado;
   }
   criaDigitoVerificador(cpf) {
+    
     let cpfArray = Array.from(cpf);
-    let peso = cpf.length;
+    let peso = cpf.length+1;
     let cpfSomado = cpfArray.reduce((acumulador, valor) => {
       //console.log(`${valor} * ${peso} = ${valor*peso}`);
       let total = Number(acumulador + valor * peso);
       peso--;
       return total;
-    });
+    },0);
+    //console.log("Total "+ cpfSomado);
+    //console.log("----------");
+    
+    
     const digito = 11 - (cpfSomado % 11);
     return digito > 9 ? 0 : String(digito);
     //      condicao     falso   verdadeiro
@@ -46,8 +51,5 @@ class validaCPF {
   }
 }
 
-const cpf = new validaCPF("070.987.720-03");
+const cpf = new validaCPF("357.718.970-35");
 console.log(cpf.valida())
-
-//705.484.450-52
-//070.987.720-03
